@@ -6,7 +6,8 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -16,20 +17,7 @@ module.exports = {
       },
     },
     extend: {
-
-      fontFamily: {
-        'neue-haas': ['"Neue Haas Grotesk Display Pro"', 'sans-serif'],
-      },
-      fontWeight: {
-        'medium': '500',
-      },
-      lineHeight: {
-        'normal': 'normal',
-      },
       colors: {
-        customGreen: '#399A6D',
-        customGrey: 'rgba(217, 217, 217, 0.17)',
-        customGrey2: '#697077',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -71,12 +59,12 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
       },
       animation: {

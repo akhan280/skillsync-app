@@ -1,42 +1,30 @@
-'use client'
+import { SkillSyncLogo } from '@/components/logo-adjustable';
+import HeroText from '@/components/hero-text';
+import ContinueButton from '@/components/continue-button';
+import FeatureText from '@/components/feature-stills';
 
-import Image from 'next/image'
-import ContinueButton from '@/components/ContinueButton';
-import SkillSyncLogo from '@/components/skillsyncLogo';
-import FeatureText from '@/components/featureStills';
-import Link from 'next/link'
-import HeroText from '@/components/heroText';
-import { useRouter } from 'next/navigation';
-
-// Import Firebase Analytics to initialize it (if you're going to use it)
-import { analytics } from '@/lib/firebase'; // Adjust the path to where your firebase.js file is located
 
 export default function Home() {
-  const router = useRouter()
 
   return (
     <> 
       <div className="flex flex-col items-center justify-center">
-        {/* idk if my tailwind isnt working, but i have to do margin like this, fix later */}
-        <div className="my-24"></div>
 
-        <SkillSyncLogo size='large' />
-        <div className="my-4"></div>
+        <SkillSyncLogo className ="py-24 my-24" size='large' />
 
-        <HeroText/>
-        <div className="my-3"></div>
+        <div className="my-3">
+          <HeroText/>
+        </div>
 
-        <button type="button" onClick={() => router.push('/2-role_input')}>
-            <ContinueButton number="1" />
-        </button>
+        <ContinueButton route='role-input' number="1" />
 
         <div className = "flex flex-row items-center mt-24 lg:px-32" >
           <FeatureText/>
         </div>
 
-        <div className="my-24"></div>
-        <div className='color-black'>Made with love by EECS 497 KTP</div>
-
+        <div className="my-24 color-black">
+          <div>Made with love by EECS 497 KTP</div>
+        </div>
       </div>
     </>
   );
